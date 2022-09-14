@@ -20,7 +20,7 @@ namespace BirthStatistics
         {
             InitializeComponent();
          
-            _statistics = new Statistics("1.csv", "dataSetSizes.json", "dataSetPercentages.json");
+            _statistics = new Statistics("WholeYear.csv", "dataSetSizes.json", "dataSetPercentages.json");
             _pane = GraphControl.GraphPane;
            
             if (!(File.Exists(@"..\..\DataSet\dataSetSizes.json") &

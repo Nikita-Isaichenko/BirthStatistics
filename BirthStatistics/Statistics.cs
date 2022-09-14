@@ -66,25 +66,28 @@ namespace BirthStatistics
         {
             string[] dataSetSex = GetDataSetSex();
 
-            for (int i = 1; i < dataSetSex.Length; i += 2)
+            for (double i = 100; i < dataSetSex.Length; i += 100)
             {
                 countGender = 0;
                 percentage = 0;
 
                 for (int j = 0; j < i; j++)
                 {
-                    if (_dataSetSex[j] == "f")
+                    if (_dataSetSex[j] == "F")
                     {
                         countGender++;
                     }
                 }
+                Console.WriteLine(i);
 
-                percentage = (countGender / i) * 100;
-                Console.WriteLine($"%: {percentage} for dataset size: {i}");
+                percentage = (countGender / i) * 100;                
 
                 _dataSetSizes.Add(i);
                 _dataSetPercentages.Add(percentage);
             }
+            DateTime t = new DateTime();
+            Console.WriteLine(t.TimeOfDay);
+
 
             Serializer.SaveToFile(NameOutputDataSetSizes, _dataSetSizes.ToArray(), PATHTEMPLATE);
             Serializer.SaveToFile(NameOutputDataSetPercentages, _dataSetPercentages.ToArray(), PATHTEMPLATE);

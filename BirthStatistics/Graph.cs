@@ -17,7 +17,7 @@ namespace BirthStatistics
             _pane.Title.Text = "График частоты рождения женщин относительно мужчин";
             _pane.YAxis.Title.Text = "Процент рожденных женщин";
             _pane.XAxis.Title.Text = "Кол-во людей в выборке";
-
+            _pane.XAxis.Type = AxisType.Log;
             _pane.XAxis.Scale.Mag = 0;
             _pane.YAxis.Scale.Mag = 0;
             _pane.CurveList.Clear();
